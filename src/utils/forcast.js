@@ -9,7 +9,7 @@ const forcast = (long, lat, callback) => {
         } else if (body.error) {
             callback('Link formatted poorly')
         } else {
-            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out.' + 'There is a ' + body.currently.precipProbability + '% chance of rain.')
+            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out.' + 'There is a ' + body.currently.precipProbability*100 + '% chance of rain.\nThere is a visibility of ' + body.daily.data[0].visibility + '~ KM and a ' + body.daily.data[0].humidity*100 + '% humidity in the air.')
         }
     })
 }
